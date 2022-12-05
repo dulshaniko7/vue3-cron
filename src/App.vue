@@ -1,15 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <cron-light v-model="value" @error="error=$event"></cron-light>
+    <div class="text-lightest pt-2">cron expression: {{value}}</div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+
+  },
+  data () {
+    return {
+      value: '* * * * *',
+      error: ''
+    }
   }
 }
 </script>
